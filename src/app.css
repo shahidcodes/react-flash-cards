@@ -1,0 +1,30 @@
+.qcard {
+  width: 100%;
+  height: 300px;
+}
+
+.qcard,
+.front,
+.back {
+  overflow: hidden;
+  backface-visibility: hidden;
+  transition: all 0.35s ease-in-out;
+}
+.card-container {
+  position: relative;
+}
+.card-container:hover .back {
+  transform: translateY(-260px);
+  z-index: 1;
+  width: 100%;
+  height: 300px;
+}
+
+.back {
+  position: absolute;
+  overflow: none;
+  z-index: -1;
+  transform: translateY(-500px);
+  width: 0;
+  height: 0;
+}
