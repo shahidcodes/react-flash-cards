@@ -95,6 +95,24 @@ export default class App extends Component {
           }
         }
       );
+
+    firebase
+      .database()
+      .ref(`flashCards/${currentUser.uid}/topics/${topic}`)
+      .push(
+        {
+          question,
+          answer,
+          topic,
+          timestamp: new Date().getTime()
+        },
+        err => {
+          if (!err) {
+            M.toast({ html: "Card Added" });
+            this.setState({ modelIsOpen: false });
+          }
+        }
+      );
   };
 
   render() {
