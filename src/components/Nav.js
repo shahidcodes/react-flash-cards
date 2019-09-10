@@ -8,6 +8,9 @@ export default function(props) {
       className="blue darken-2"
     >
       <NavItem onClick={() => props.handleAddClick()}>ADD CARD</NavItem>
+      <NavItem onClick={() => props.handleLoginClick()}>
+        {props.isLoggedIn ? "LOGOUT" : "LOGIN"}
+      </NavItem>
     </Navbar>
   );
 }
